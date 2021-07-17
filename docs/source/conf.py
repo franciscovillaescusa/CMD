@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'Camels Multifield Challenge'
+project = 'CAMELS Multifield Dataset'
 copyright = '2021, Francisco Villaescusa-Navarro'
 author = 'Francisco Villaescusa-Navarro'
 

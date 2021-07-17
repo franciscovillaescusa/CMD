@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-CAMELS Multifield Challenge (CMC)
+CAMELS Multifield Dataset (CMD)
 =================================
 
 Cosmologists have developed a theoretical framework (the standard model of Cosmology) that is able to explain a very large variety of cosmological observations. This model has some free parameters that characterize fundamental properties of the Universe, such as its age, geometry, composition...etc.
