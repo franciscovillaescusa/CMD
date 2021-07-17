@@ -1,1 +1,3 @@
-# CAMELS_Multifield_Challenge
+# CAMELS Multifield Dataset (CMD)
+
+[Documentation][https://camels-multifield-dataset.readthedocs.io]
