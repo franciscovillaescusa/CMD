@@ -1,13 +1,22 @@
 Parameter Inference
 ===================
 
+Below we describe this task and the benchmark model. We also discuss the main problems and challenges involved in this task.
+
+Description
+-----------
+
 One of the most obvious applications of CMD is parameter inference. Each 2D map and 3D grid is characterized by 6 numbers: two cosmological parameters describing fundamental properties of the Universe and four astrophysical parameters that quantify the efficiency of astrophysical processes supernova explosions or feedback from black holes. The goal of this application is to develop robust models that can infer the value of the two cosmological parameters from the data with the highest accuracy.
 
 
-In this work and this work parameter inference from the 2D maps of CMD was carried out. Here we release all codes and network weights used in that analysis as a benchmark model to compare with.
+Benchmark
+---------
+
+Below we describe the benchmark model for this task. We note that this only applies to 2D maps.
+
 
 Requisites
-----------
+^^^^^^^^^^
 
 - python3
 - numpy
@@ -15,12 +24,12 @@ Requisites
 - `optuna <https://optuna.org>`_
 
 Organization
-------------
+^^^^^^^^^^^^
 
 The folder containing the codes and weights is called ``benchmark``, and is located within the ``2D_maps`` folder. Inside it, there are three folders called ``scripts``, containing the codes used to train and test the networks, ``databases`` with the optuna databases and ``weights``, that has the weights of the networks.
 
 scripts
--------
+^^^^^^^
 
 This folder contains the following codes:
 
@@ -44,7 +53,7 @@ To test a model on a given field(s), or a multifield, follow these steps:
 This `colab <https://colab.research.google.com/drive/1-BmkA8JSc36O8g9pj7FenD1YSLKqjQR3?usp=sharing>`__ shows an example on how to train and test a model using these scripts.
    
 databases
----------
+^^^^^^^^^
 
 We use the optuna software to find the best value of the hyperparameters (learning rate, weight decay...etc) of one particular model. Typically, for each field, we perform 50 trials, where a trial corresponds to the training carried out with one particular choice of the value of the hyperparameters. This folder contains the databases created by optuna with the information about the different trials for the different simulation types.
 
@@ -63,7 +72,7 @@ We provide an example on how to read the information of these files in this `col
 
 
 weights
--------
+^^^^^^^
 
 This folder contains the weights of all the models trained. Thus, for each field, there will be at least 50 different files containing the weights of the 50 different trials considered. The generic name of these files is ``weights_sim_field_trialnumber_all_steps_500_500_o3.pt``, where ``sim`` can be IllustrisTNG, SIMBA, or Nbody, ``field`` is the name of the considered field (can be several of them), and ``trialnumber`` is the trial number. In the cases where the neural network is trained on fields that are smoothed with a Gaussian kernel, the generic name of the files is ``weights_sim_field_trialnumber_all_steps_500_500_o3_smoothing_width.pt``, where width is the width of the Gaussian kernel in pixel units.
 
@@ -71,10 +80,10 @@ These files can be read by Pytorch routines once the architecture is specified. 
 
 
 
-challenges
+Challenges
 ----------
 
-The results obtained with the above model were very promising. The network were able to determine the value of the cosmological parameters with a few percent accuracy. However, some problems raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked ery well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
+The results obtained with the above model were very promising. The networks were able to determine the value of the cosmological parameters with a few percent accuracy. However, some problems raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked ery well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
 
 We think the three main challenges for the parameter inference task are:
 

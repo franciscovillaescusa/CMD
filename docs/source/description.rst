@@ -1,9 +1,6 @@
 Description
 ===========
 
-Data
-====
-
 Structure
 ---------
 
@@ -11,18 +8,18 @@ The data from CMD can be classified into three categories 1) IllustrisTNG, 2) SI
 
 **IllustrisTNG**
 
-- 15,000 images per field for 13 different fields.
-- 4,000 3D grids per field for 13 different fields. 
+- 15,000 2D maps per field for 13 different fields.
+- 15,000 3D grids per field for 13 different fields. 
   
 **SIMBA**
 
-- 15,000 images per field for 10 different fields.
-- 4,000 3D grids per field for 10 different fields. 
+- 15,000 2D maps per field for 12 different fields.
+- 15,000 3D grids per field for 12 different fields. 
 
 **Nbody**
 
-- 15,000 images of one single field.
-- 4,000 3D grids of one single field. 
+- 15,000 2D maps of one single field.
+- 1,000 3D grids of one single field. 
 
 All images have :math:`256\times256` pixels and cover an area of :math:`25\times25~(h^{-1}{\rm Mpc})^2` at redshift 0. The 3D grids contain :math:`128^3`, :math:`256^3` or :math:`512^3` voxels over a volume of :math:`25\times25\times25~(h^{-1}{\rm Mpc})^3` at redshifts 0, 0.5, 1, or 1.5. 
 

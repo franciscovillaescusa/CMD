@@ -15,7 +15,7 @@ CAMELS Multifield Dataset (CMD)
    data
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Applications
 
    inference
