@@ -1,10 +1,13 @@
+Description
+===========
+
 Data
 ====
 
 Structure
 ---------
 
-CMC data can be classified into three categories 1) IllustrisTNG, 2) SIMBA, and 3) Nbody, where the name indicates the type of simulations used to generate the data. Each category contains the following data:
+The data from CMD can be classified into three categories 1) IllustrisTNG, 2) SIMBA, and 3) Nbody, where the name indicates the type of simulations used to generate the data. Each category contains the following data:
 
 **IllustrisTNG**
 

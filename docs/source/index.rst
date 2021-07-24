@@ -10,7 +10,7 @@ CAMELS Multifield Dataset (CMD)
    :maxdepth: 2
    :caption: Data
 
-   description_data
+   description
    features
    data
 
@@ -23,16 +23,13 @@ CAMELS Multifield Dataset (CMD)
    mapping
    superresolution
    time_evolution
-   
-   science
-   goals
-   description_maps
 
    
 .. toctree::
    :maxdepth: 2
    :caption: Other
 
+   science
    terminology
    publications
    citation
