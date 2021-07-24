@@ -1,7 +1,8 @@
 Parameter Inference
 ===================
 
-One of the most obvious applications of CMD is parameter inference.
+One of the most obvious applications of CMD is parameter inference. CMD contains a collection of hundreds of thousands of 2D maps and 3D grids with different properties of the comic gas, dark matter, stars, and black holes from 2,000 different universes that span tens of light years apart. Each of those maps and grids is characterized by 6 numbers: two cosmological parameters describing fundamental properties of the Universe and four astrophysical parameters that quantify the efficiency of astrophysical processes supernova explosions or feedback from black holes. The task is to develop robust models that can infer the value of the two cosmological parameters from the data with the highest accuracy.
+
 
 In this work and this work parameter inference from the 2D maps of CMD was carried out. Here we release all codes and network weights used in that analysis as a benchmark model to compare with.
 
@@ -70,3 +71,15 @@ These files can be read by Pytorch routines once the architecture is specified. 
 
 
 
+challenges
+----------
+
+The results obtained with the above model were very promising. The network were able to determine the value of the cosmological parameters with a few percent accuracy. However, some problems raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked ery well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
+
+We think the three main challenges for the parameter inference task are:
+
+- Build models to infer the value of the cosmological parameters that are more accurate than the above benchmark.
+- Build models that trained on one set of simulations (e.g. IllustrisTNG) can infer the correct cosmology when tested on the other set (e.g. SIMBA).
+- Determine the minimum set of fields than contain 90% and 95% of the cosmological and astrophysical information.
+
+Solving the above challenges will help cosmologists to extract the maximum robust information from cosmological surveys, unveiling the laws and constituents of our own Universe.
