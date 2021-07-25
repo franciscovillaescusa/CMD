@@ -11,7 +11,6 @@ CAMELS Multifield Dataset (CMD)
    :caption: Data
 
    description
-   features
    data
 
 .. toctree::

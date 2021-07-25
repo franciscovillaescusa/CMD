@@ -1,57 +1,78 @@
 Description
 ===========
 
+Simulations
+-----------
+
+CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into three groups, that indicate the type of simulation used to create the data:
+
+- **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 1,000 of these simulations. 
+
+- **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,000 of these simulations. 
+  
+- **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. CMD uses 1,000 of these simulations. 
+
 Structure
 ---------
 
-The data from CMD can be classified into three categories 1) IllustrisTNG, 2) SIMBA, and 3) Nbody, where the name indicates the type of simulations used to generate the data. Each category contains the following data:
+CMD provides the following data generated from the above simulations:
 
 **IllustrisTNG**
 
-- 15,000 2D maps per field for 13 different fields.
-- 15,000 3D grids per field for 13 different fields. 
+- 15,000 2D maps per field for 13 different fields. 195,000 2D maps in total.
+- 15,000 3D grids per field for 13 different fields. 195,000 3D grids in total.
   
 **SIMBA**
 
-- 15,000 2D maps per field for 12 different fields.
-- 15,000 3D grids per field for 12 different fields. 
+- 15,000 2D maps per field for 12 different fields. 180,000 2D maps in total.
+- 15,000 3D grids per field for 12 different fields. 180,000 3D grids in total.
 
 **Nbody**
 
-- 15,000 2D maps of one single field.
-- 1,000 3D grids of one single field. 
+- 15,000 2D maps of one single field. 15,000 2D maps in total.
+- 1,000 3D grids of one single field. 1,000 3D grids in total.
 
-All images have :math:`256\times256` pixels and cover an area of :math:`25\times25~(h^{-1}{\rm Mpc})^2` at redshift 0. The 3D grids contain :math:`128^3`, :math:`256^3` or :math:`512^3` voxels over a volume of :math:`25\times25\times25~(h^{-1}{\rm Mpc})^3` at redshifts 0, 0.5, 1, or 1.5. 
+The following table provides more details on the CMD structure:
 
-+---------------------------+--------------+-------------+-------------+--------+
-| Field                     | IllustrisTNG |  SIMBA      | Nbody       | Prefix |
-+===========================+==============+=============+=============+========+
-| Gas mass                  | yes          | yes         | no          | Mgas   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Dark matter mass          | yes          | yes         | no          | Mcdm   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Total matter mass         | yes          | yes         | yes         | Mtot   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Stellar mass              | yes          | yes         | no          | Mstar  |
-+---------------------------+--------------+-------------+-------------+--------+
-| Gas velocity              | yes          | yes         | no          | Vgas   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Dark matter velocity      | yes          | yes         | no          | Vcdm   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Gas temperature           | yes          | yes         | no          | T      |
-+---------------------------+--------------+-------------+-------------+--------+
-| Gas pressure              | yes          | yes         | no          | P      |
-+---------------------------+--------------+-------------+-------------+--------+
-| Gas metallicity           | yes          | no          | no          | Z      |
-+---------------------------+--------------+-------------+-------------+--------+
-| Neutral hydrogen mass     | yes          | yes         | no          | HI     |
-+---------------------------+--------------+-------------+-------------+--------+
-| Electron abundance        | yes          | yes         | no          | ne     |
-+---------------------------+--------------+-------------+-------------+--------+
-| Magnesium over Iron ratio | yes          | no          | no          | MgFe   |
-+---------------------------+--------------+-------------+-------------+--------+
-| Magnetic fields           | yes          | no          | no          | B      |
-+---------------------------+--------------+-------------+-------------+--------+
++-----------------------+--------+--------------------+--------------------+--------------------+
+| Field                 | Prefix | IllustrisTNG       | SIMBA              | Nbody              | 
++=======================+========+=========+==========+=========+==========+=========+==========+
+|                       |        | 2D maps | 3D grids | 2D maps | 3D grids | 2D maps | 3D grids |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Gas mass              | Mgas   | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Gas velocity          | Vgas   | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Gas temperature       | T      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Gas pressure          | P      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Gas metallicity       | Z      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Neutral hydrogen mass | HI     | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Electron number       | ne     | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Magnetic fields       | B      | 15,000  | 15,000   | --      | --       | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Magnesium over Iron   | MgFe   | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Dark matter mass      | Mcdm   | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Dark matter velocity  | Vcdm   | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Stellar mass          | Mstar  | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Total matter mass     | Mtot   | 15,000  | 15,000   | 15,000  | 15,000   | 15,000  | 15,000   |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+| Total                 |        | 195,000 | 195,000  | 180,000 | 180,000  | 15,000  | 15,000   |
++-----------------------+--------+---------+----------+---------+----------+---------+----------+
+
+
+.. Note::
+  
+   All 2D maps have :math:`256^2` pixels and cover a periodic area of :math:`(25~h^{-1}{\rm Mpc})^2` at redshift 0. The 3D grids contain :math:`128^3`, :math:`256^3` or :math:`512^3` voxels over a volume of :math:`(25~h^{-1}{\rm Mpc})^3` and are at redshifts 0, 0.5, 1, 1.5, and 2. 
 
 We show an example of how the IllustrisTNG images look like for the different fields:
 
@@ -60,6 +81,19 @@ We show an example of how the IllustrisTNG images look like for the different fi
 where from top-left to bottom-right: gas mass, gas velocity, gas temperature, gas pressure, dark matter mass, dark matter velocity, electron abundance, magnetic fields, stellar mass, neutral hydrogen gas metallicity, and magnesium over iron ratio.
 
 These images show different properties of the gas, dark matter, and stars in a given Universe. Determining the value of the cosmological parameters from these images will help us to decode the true value of our own Universe, allowing us to unveil some of the biggest misteries in fundamental physics.
+
+Labels
+------
+
+Each 2D map and 3D grid has a set of labels attached to it:
+
+- :math:`\Omega_{\rm m}`. This is a cosmological parameter that represents the fraction of matter in the Universe.
+- :math:`\sigma_8`. This is a cosmological parameter that controls the smoothness of the distribution of matter in the Universe.
+- :math:`A_{\rm SN1}` and :math:`A_{\rm SN2}`. These are two astrophysical parameters that controls two properties of supernova feedback.
+- :math:`A_{\rm AGN1}` and :math:`A_{\rm AGN2}`. These are two astrophysical parameters that control two properties of black-hole feedback.
+
+The data from the IllustrisTNG and SIMBA simulations are described by all the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
+  
 
 2D maps
 -------
@@ -148,3 +182,44 @@ The value of the cosmological and astrophysical parameters of a given grid can b
 
    grid_number = 821
    params_map  = params[map_number]
+
+   
+Symmetries
+----------
+
+Each 2D map and 3D grid from CMD has a set of labels associated to it: two cosmological parameters and four astrophysical parameters (only in the case of data from IllustrisTNG and SIMBA simulations). These labels will remain the same if
+
+- rotations
+- translations
+- parity
+
+transformations are applied to the data.
+
+Another important thing to take into account is that the data is periodic in all dimensions. For instance, in the case of 2D maps
+
+.. code:: python
+
+   import numpy as np
+
+   # name of the file
+   fmaps = 'Images_HI_IllustrisTNG_LH_z=0.00.npy'
+
+   # read the data
+   maps_HI = np.load(fmaps)
+
+   # take the map number 36
+   map_HI = maps_HI[36]
+
+   # the pixel map_HI[45,89] is adjacent to the pixel map_HI[46,89]
+   # the pixel map_HI[145,99] is adjacent to the pixel map_HI[145,98]
+   # the pixel map_HI[76,0] is adjancent to the pixel map_HI[76,255]
+   # the pixel map_HI[255,12] is adjancent to the pixel map_HI[0,12]
+
+
+.. Note::
+
+   When using convolutional neural networks, one can take advantage of this property by using periodic padding.
+  
+   
+Disk space
+----------
