@@ -155,9 +155,27 @@ The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_g
    fgrids = 'Grids_HI_SIMBA_LH_128_z=0.00.npy'
 
    # read the data
-   grids = np.load(grids)
+   grids = np.load(fgrids)
 
-The file contains 1,000 grid with :math:`128\times128\times128` voxels each.
+The file contains 1,000 grid with :math:`128\times128\times128` voxels each. For large files (e.g. those containing the grids with :math:`512^3` voxels) it is better to read the files in a slightly different way, to avoid running out of RAM memory:
+
+.. code:: python
+
+   import numpy as np
+
+   # name of the file
+   fgrids = 'Grids_Mcdm_Nbody_LH_512_z=0.00.npy'
+
+   # read the data
+   grids = np.load(fgrids, mmap_mode='r')
+
+   # take the first 3D grid
+   grids[0]
+
+   # multiply all the grids from numbers 672 to 700 by 3
+   grids[672:700]*3
+
+   
 
 The value of the cosmological and astrophysical parameters characterizing the maps of a given field is ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as this:
 
