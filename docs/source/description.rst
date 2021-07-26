@@ -222,8 +222,8 @@ Another important thing to take into account is that the data is periodic in all
    When using convolutional neural networks, one can take advantage of this property by using periodic padding.
   
    
-Disk space
-----------
+Storage
+-------
 
 Each pixel of a 2D map and each voxel of a 3D grid is stored as a float, i.e. it occupies 4 bytes.
 
