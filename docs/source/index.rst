@@ -18,8 +18,8 @@ Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Un
    :maxdepth: 2
    :caption: Data
 
-   description
    data
+   download
 
 .. toctree::
    :maxdepth: 3
