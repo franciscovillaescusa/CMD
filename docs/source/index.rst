@@ -12,7 +12,7 @@ CMD is a publicly available collection of hundreds of thousands 2D maps and 3D g
 
    Examples of 2D maps from CMD. From top-left to bottom right: gas temperature, gas pression, neutral hydrogen mass, electron number, metallicity, gas mass, dark matter mass, total mass, stellar mass, magnetic fields, magnesium over iron, gas velocity, and dark matter velocity. Each map is characterized by the value of the cosmological parameters (:math:`\Omega_{\rm m}` and :math:`\sigma_8`) and the astrophysical parameters (:math:`A_{\rm SN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN1}`, and :math:`A_{\rm AGN2}`).
 
-Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Understanding the relation between the data and the labels will help cosmologists to decipher the misteries of our own Universe.
+Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Understanding the relation between the data and the labels will help cosmologists to decipher the mysteries of our own Universe.
    
 .. toctree::
    :maxdepth: 2

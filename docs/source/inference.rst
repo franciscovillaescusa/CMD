@@ -26,7 +26,7 @@ Requisites
 Organization
 ^^^^^^^^^^^^
 
-The folder containing the codes and weights is called ``benchmark``, and is located within the ``2D_maps`` folder. Inside it, there are three folders called ``scripts``, containing the codes used to train and test the networks, ``databases`` with the optuna databases and ``weights``, that has the weights of the networks.
+The folder containing the codes and weights is called ``benchmark``, and is located within the ``2D_maps`` folder. Inside it, there are three folders called ``scripts``, containing the codes used to train and test the networks, ``databases`` with the optuna databases and ``weights``, which contains the weights of the networks.
 
 scripts
 ^^^^^^^
@@ -34,7 +34,7 @@ scripts
 This folder contains the following codes:
 
 - ``architecture.py``. This script contains different architecture models. 
-- ``data.py``. This script process the data to train the networks.
+- ``data.py``. This script processes the data to train the networks.
 - ``train.py``. This is the code used to train the network. 
 - ``test.py``. This is the code used to test the network. 
 
@@ -88,7 +88,7 @@ The results obtained with the above model were very promising. The networks were
 We think the three main challenges for the parameter inference task are:
 
 - Build models to infer the value of the cosmological parameters that are more accurate than the above benchmark.
-- Build models that trained on one set of simulations (e.g. IllustrisTNG) can infer the correct cosmology when tested on the other set (e.g. SIMBA).
+- Build models that trained on one suite of simulations (e.g. IllustrisTNG) can infer the correct cosmology when tested on the other suite (e.g. SIMBA).
 - Determine the minimum set of fields than contain 90% and 95% of the cosmological and astrophysical information.
 
 Solving the above challenges will help cosmologists to extract the maximum robust information from cosmological surveys, unveiling the laws and constituents of our own Universe.

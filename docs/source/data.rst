@@ -32,7 +32,7 @@ CMD provides the following data generated from the above simulations:
 - 15,000 2D maps of one single field. 15,000 2D maps in total.
 - 1,000 3D grids of one single field. 1,000 3D grids in total.
 
-The following table provides more details on CMD data:
+The table below lists the 13 types of fields represented by the data and provides basic information about them.
 
 +-----------------------+--------+--------------------+--------------------+--------------------+--------------------------------------+
 | Field                 | Prefix | IllustrisTNG       | SIMBA              | Nbody              | Units                                |
@@ -81,7 +81,7 @@ We show an example of how the IllustrisTNG images look like for the different fi
 
 where from top-left to bottom-right: gas mass, gas velocity, gas temperature, gas pressure, dark matter mass, dark matter velocity, electron abundance, magnetic fields, stellar mass, neutral hydrogen gas metallicity, and magnesium over iron ratio.
 
-These images show different properties of the gas, dark matter, and stars in a given Universe. Determining the value of the cosmological parameters from these images will help us to decode the true value of our own Universe, allowing us to unveil some of the biggest misteries in fundamental physics.
+These images show different properties of the gas, dark matter, and stars in a given Universe. Determining the value of the cosmological parameters from these images will help us to decode the true value of our own Universe, allowing us to unveil some of the biggest mysteries in fundamental physics.
 
 Labels
 ------
@@ -113,7 +113,7 @@ The generic name of the files containing the maps is ``Images_prefix_sim_LH_z=0.
 
 The file contains 15,000 maps with :math:`256\times256` pixels each.
 
-The value of the cosmological and astrophysical parameters characterizing the maps of a given field is ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as this:
+The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as follows:
 
 .. code:: python
 
@@ -125,13 +125,13 @@ The value of the cosmological and astrophysical parameters characterizing the ma
    # read the data
    params = np.loadtxt(fparams)
 
-The file contains 1,000 entries with 6 values per entry. The first and second entry are the value of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the value of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
+The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
 
 .. note::
 
-   In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the value of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded. They are only kept to standarize the training of the networks.
+   In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded (because the Nbody simulations do not model supernovae and black holes). They are only kept to standardize the training of the networks.
 
-The value of the cosmological and astrophysical parameters of a given map can be found as
+The values of the cosmological and astrophysical parameters of a given map can be found as
 
 .. code:: python
 
@@ -139,7 +139,7 @@ The value of the cosmological and astrophysical parameters of a given map can be
    params_map = params[map_number//15]
 
 
-See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7scFtiKLygj?usp=sharing>`_ for further details on how to manipulate the images and the value of the parameters.
+See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7scFtiKLygj?usp=sharing>`_ for further details on how to manipulate the images and the values of the parameters.
 
 
 3D grids
@@ -157,7 +157,7 @@ The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_g
    # read the data
    grids = np.load(fgrids)
 
-The file contains 1,000 grid with :math:`128\times128\times128` voxels each. For large files (e.g. those containing the grids with :math:`512^3` voxels) it is better to read the files in a slightly different way, to avoid running out of RAM memory:
+The file contains 1,000 grids with :math:`128\times128\times128` voxels each. For large files (e.g. those containing the grids with :math:`512^3` voxels) it is better to read the files in a slightly different way, to avoid running out of RAM memory:
 
 .. code:: python
 
@@ -177,7 +177,7 @@ The file contains 1,000 grid with :math:`128\times128\times128` voxels each. For
 
    
 
-The value of the cosmological and astrophysical parameters characterizing the maps of a given field is ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as this:
+The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as follows:
 
 .. code:: python
 
@@ -189,11 +189,11 @@ The value of the cosmological and astrophysical parameters characterizing the ma
    # read the data
    params = np.loadtxt(fparams)
 
-The file contains 1,000 entries with 6 values per entry. The first and second entry are the value of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the value of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
+The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
 
 .. note::
 
-   In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the value of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded. They are only kept to standarize the training of the networks.
+   In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded (because the Nbody simulations do not model supernovae and black holes). They are only kept to standardize the training of the networks.
 
 The value of the cosmological and astrophysical parameters of a given grid can be found as
 

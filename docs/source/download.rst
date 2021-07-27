@@ -1,12 +1,12 @@
 Download
 ========
 
-All CMD data is hosted in the Rusty cluster of the `Flatiron Institute <https://www.simonsfoundation.org/flatiron>`_, and can be downloaded in two different ways:
+All CMD data is hosted on the Rusty cluster of the `Flatiron Institute <https://www.simonsfoundation.org/flatiron>`_, and can be downloaded in two different ways:
 
 - Via `globus <https://app.globus.org/file-manager?origin_id=2be3b3c6-d752-11eb-8131-bbca43030bb4&origin_path=%2F>`_.
 - Via `url <https://users.flatironinstitute.org/~fvillaescusa/priv/v0lBajuAlt1am6RxCiK0u0Whe9J20/CMC>`_.
 
-While with the url the transfer is simple and convenient, it can be slow and unstable. We recommend using globus as it is the fastest and more reliable way to transfer the data.
+While with the url the transfer is simple and convenient, it can be slow and unstable. We recommend using globus as it is the faster and more reliable way to transfer the data.
 
 Structure
 ---------
@@ -15,14 +15,16 @@ CMD data is organized as follows:
 
 - **2D\_maps**. This folder contains 2 subfolders:
   
-  - data. All files with the 2D maps and the value of the cosmological and astrophysical parameters are here.
+  - **data**. All files with the 2D maps and the values of the cosmological and astrophysical parameters are here.
 
-  - inference. This folder contain the codes and network weights used in these papers to perform parameter inference using CMD.
+  - **inference**. This folder contain the codes and network weights used in these papers to perform parameter inference using CMD.
 
     
 - **3D\_grids**. This folder only contains 1 subfolder:
 
-  - data. All files with the 3D grids and the value of the cosmological and astrophysical parameters are here.
+  - **data**. All files with the 3D grids and the values of the cosmological and astrophysical parameters are here.
+
+The total data volume of the 2D maps is 95GB, and of the 3D grids is much larger, 72.4TB.
 
 The image below shows a scheme with the data organization.
     
