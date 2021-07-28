@@ -1,4 +1,4 @@
-.. CAMELS Multifield Challenge documentation master file, created by
+.. CAMELS Multifield Dataset documentation master file, created by
    sphinx-quickstart on Sat Jun  5 20:05:31 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
