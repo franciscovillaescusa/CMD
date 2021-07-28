@@ -1,3 +1,5 @@
+.. _mapping:
+
 N-body to hydro
 ===============
 
