@@ -1,12 +1,14 @@
 Download
 ========
 
-All CMD data is hosted on the Rusty cluster of the `Flatiron Institute <https://www.simonsfoundation.org/flatiron>`_, and can be downloaded in two different ways:
+CMD data can be downloaded in two different ways:
 
-- Via `globus <https://app.globus.org/file-manager?origin_id=2be3b3c6-d752-11eb-8131-bbca43030bb4&origin_path=%2F>`_.
-- Via `url <https://users.flatironinstitute.org/~fvillaescusa/priv/v0lBajuAlt1am6RxCiK0u0Whe9J20/CMC>`_.
+#. Via `globus <https://app.globus.org/file-manager?origin_id=837d49c0-f099-11eb-ab64-d195c983855c&origin_path=%2F>`_.
+#. Via  `url  <https://users.flatironinstitute.org/~fvillaescusa/priv/h2ycLVIanaOqF4LTHw7n3E0IkAAH9/CMD>`_.
 
-While with the url the transfer is simple and convenient, it can be slow and unstable. We recommend using globus as it is the faster and more reliable way to transfer the data.
+.. Note::
+  
+   Transfering the data with the url is simple and convenient, but it can also be slow and unstable, in particular for the large files. We thus recommend using globus as it is the fastest and more reliable way to transfer the data.
 
 Structure
 ---------
@@ -15,18 +17,18 @@ CMD data is organized as follows:
 
 - **2D\_maps**. This folder contains 2 subfolders:
   
-  - **data**. All files with the 2D maps and the values of the cosmological and astrophysical parameters are here.
+  - **data**. It hosts all files with the 2D maps and the values of the cosmological and astrophysical parameters.
 
-  - **inference**. This folder contain the codes and network weights used in these papers to perform parameter inference using CMD.
+  - **inference**. It hosts the codes and network weights used to perform parameter inference with CMD.
 
     
 - **3D\_grids**. This folder only contains 1 subfolder:
 
   - **data**. All files with the 3D grids and the values of the cosmological and astrophysical parameters are here.
 
-The total data volume of the 2D maps is 95GB, and of the 3D grids is much larger, 72.4TB.
+The total data volume of the 2D maps is approximate 100GB, and of the 3D grids is of 75TB.
 
-The image below shows a scheme with the data organization.
+The image below shows a scheme with the way the data is organized:
     
 .. image:: Diagram.png
    :width: 600
