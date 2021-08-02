@@ -85,10 +85,11 @@ Challenges
 
 The results obtained with the above model were very promising. The networks were able to determine the value of the cosmological parameters with a few percent accuracy. However, some problems raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked ery well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
 
-We think the three main challenges for the parameter inference task are:
+We think the four main challenges for the parameter inference task are:
 
 - Build models to infer the value of the cosmological parameters that are more accurate than the above benchmark.
 - Build models that trained on one suite of simulations (e.g. IllustrisTNG) can infer the correct cosmology when tested on the other suite (e.g. SIMBA).
 - Determine the minimum set of fields than contain 90% and 95% of the cosmological and astrophysical information.
+- Understand what operation(s) is the network performing for each different field and in multifield in order to determine the value of the cosmological parameters.
 
 Solving the above challenges will help cosmologists to extract the maximum robust information from cosmological surveys, unveiling the laws and constituents of our own Universe.
