@@ -79,7 +79,7 @@ We show an example of how the IllustrisTNG images look like for the different fi
 
 .. image:: multifield.png
 
-where from top-left to bottom-right: gas mass, gas velocity, gas temperature, gas pressure, dark matter mass, dark matter velocity, electron abundance, magnetic fields, stellar mass, neutral hydrogen gas metallicity, and magnesium over iron ratio.
+where from top-left to bottom-right: gas density, gas velocity, gas temperature, gas pressure, dark matter density, dark matter velocity, electron number density, magnetic fields, stellar mass density, neutral hydrogen mass density, gas metallicity, and magnesium over iron ratio.
 
 These images show different properties of the gas, dark matter, and stars in a given Universe. Determining the value of the cosmological parameters from these images will help us to decode the true value of our own Universe, allowing us to unveil some of the biggest mysteries in fundamental physics.
 
@@ -105,7 +105,7 @@ The generic name of the files containing the maps is ``Maps_prefix_sim_LH_z=0.00
 
    In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
-For instance, the file containing the gas mass maps of the IllustrisTNG simulations is ``Maps_Mgas_IllustrisTNG_LH_z=0.00.npy``. The 2D maps are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA gas temperature maps do:
+For instance, the file containing the gas density maps of the IllustrisTNG simulations is ``Maps_Mgas_IllustrisTNG_LH_z=0.00.npy``. The 2D maps are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA gas temperature maps do:
 
 .. code:: python
 
@@ -163,7 +163,7 @@ The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_g
 
    In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
-For instance, the file containing the 3D gas metallicity of the IllustrisTNG simulations on a grid with ``256^3`` voxels at redshift 0 is ``Grids_Z_IllustrisTNG_LH_256_z=0.00.npy``. The 3D grids are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA neutral hydrogen mass at redshift 1.0 with a grid of ``128^3`` voxels do:
+For instance, the file containing the 3D gas metallicity of the IllustrisTNG simulations on a grid with ``256^3`` voxels at redshift 0 is ``Grids_Z_IllustrisTNG_LH_256_z=0.00.npy``. The 3D grids are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA neutral hydrogen mass density at redshift 1.0 with a grid of ``128^3`` voxels do:
 
 .. code:: python
 
@@ -265,7 +265,7 @@ Matching data
 
 There are several ways to match CMD.
 
-1. The 2D maps and 3D grids can be matched across fields within the same simulation type. For instance, the maps number 2786 of the files ``Maps_ne_IllustrisTNG_LH_z=0.0.npy`` and ``Maps_B_IllustrisTNG_LH_z=0.0.npy`` represent the same region of the same simulation. The only difference is that the first map will show the electron abundance while the second shows the magnetic fields. The same thing applies to the 3D grids. For instance, the grids number 621 of the files ``Grids_HI_SIMBA_LH_128_z=0.0.npy`` and ``Grids_Mgas_SIMBA_LH_128_z=0.0.npy`` represent the same volume of the same simulation with the only difference that the first grid shows the neutral hydrogen mass while the second contains the gas mass.
+1. The 2D maps and 3D grids can be matched across fields within the same simulation type. For instance, the maps number 2786 of the files ``Maps_ne_IllustrisTNG_LH_z=0.0.npy`` and ``Maps_B_IllustrisTNG_LH_z=0.0.npy`` represent the same region of the same simulation. The only difference is that the first map will show the electron abundance while the second shows the magnetic fields. The same thing applies to the 3D grids. For instance, the grids number 621 of the files ``Grids_HI_SIMBA_LH_128_z=0.0.npy`` and ``Grids_Mgas_SIMBA_LH_128_z=0.0.npy`` represent the same volume of the same simulation with the only difference that the first grid shows the neutral hydrogen mass density while the second contains the gas density.
 
 .. warning::
 
