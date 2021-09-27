@@ -6,7 +6,7 @@ Below we describe this task and the benchmark model. We also discuss the main pr
 Description
 -----------
 
-One of the most obvious applications of CMD is parameter inference. Each 2D map and 3D grid is characterized by 6 numbers: two cosmological parameters describing fundamental properties of the Universe and four astrophysical parameters that quantify the efficiency of astrophysical processes supernova explosions or feedback from black holes. The goal of this application is to develop robust models that can infer the value of the two cosmological parameters from the data with the highest accuracy.
+One of the most obvious applications of CMD is parameter inference. Each 2D map and 3D grid is characterized by 6 numbers: two cosmological parameters describing fundamental properties of the Universe and four astrophysical parameters that quantify the efficiency of the astrophysical processes: supernova explosions and feedback from black holes. The goal of this application is to develop robust models that can infer the value of the two cosmological parameters from the data with the highest accuracy.
 
 
 Benchmark
@@ -55,14 +55,14 @@ This `colab <https://colab.research.google.com/drive/1-BmkA8JSc36O8g9pj7FenD1YSL
 databases
 ^^^^^^^^^
 
-We use the optuna software to find the best value of the hyperparameters (learning rate, weight decay...etc) of one particular model. Typically, for each field, we perform 50 trials, where a trial corresponds to the training carried out with one particular choice of the value of the hyperparameters. This folder contains the databases created by optuna with the information about the different trials for the different simulation types.
+We use the optuna software to find the best value of the hyperparameters (learning rate, weight decay...etc) of one particular model. Typically, for each field, we perform 50 trials, where a trial corresponds to the training carried out with one particular choice of hyperparameters. This folder contains the databases created by optuna with the information about the different trials for the different simulation types.
 
-The generic name of one of these files is ``sim_o3_field_all_steps_500_500_o3.db`` where ``sim`` can be IllustrisTNG, SIMBA, or Nbody, ``field`` is the considered field (can be several fields together). In some cases we smooth out the fields with a Gaussian kernel with width ``width`` (in pixel units). The generic name of these files is ``sim_o3_field_all_steps_500_500_o3_smoothing_width.db``.
+The generic name of one of these files is ``sim_o3_field_all_steps_500_500_o3.db`` where ``sim`` can be IllustrisTNG, SIMBA, or Nbody, ``field`` is the considered field (can be several fields together). In some cases, we smooth out the fields with a Gaussian kernel with width ``width`` (in pixel units). The generic name of these files is ``sim_o3_field_all_steps_500_500_o3_smoothing_width.db``.
 
 These files can be read with optuna package, and two arguments are needed:
 
 - ``study_name``. For all our databases, this variable is set to ``wd_dr_hidden_lr_o3``.
-- ``storage``. This should be set to the a sqlite database with the name of the file, e.g. ``sqlite:////home/fvillaescusa/CMC/2D_maps/benchmark/databases/SIMBA_o3_HI_all_steps_500_500_o3.db``
+- ``storage``. This should be set to an sqlite database with the name of the file, e.g. ``sqlite:////home/fvillaescusa/CMC/2D_maps/benchmark/databases/SIMBA_o3_HI_all_steps_500_500_o3.db``
 
 We provide an example on how to read the information of these files in this `colab <https://colab.research.google.com/drive/1ab79y_nIr2JkkgtT_QJhjLTJYNjY9M0B?usp=sharing>`__.
 
@@ -83,13 +83,13 @@ These files can be read by Pytorch routines once the architecture is specified. 
 Challenges
 ----------
 
-The results obtained with the above model were very promising. The networks were able to determine the value of the cosmological parameters with a few percent accuracy. However, some problems raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked ery well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
+The results obtained with the above model were very promising. The networks were able to determine the value of the cosmological parameters within an accuracy of a few percent. However, some issues raised up. The most important was that for some fields, the model was not robust. For instance, if the model was trained on 2D maps from the IllustrisTNG simulations, it worked very well when tested on maps from those simulations, but it failed when tested on 2D maps from the SIMBA simulations.
 
 We think the four main challenges for the parameter inference task are:
 
-- Build models to infer the value of the cosmological parameters that are more accurate than the above benchmark.
-- Build models that trained on one suite of simulations (e.g. IllustrisTNG) can infer the correct cosmology when tested on the other suite (e.g. SIMBA).
+- Build models that are more accurate than the above benchmark to infer the values of the cosmological parameters.
+- Build models that, when trained on one suite of simulations (e.g. IllustrisTNG), can infer the correct cosmology when tested on the other suite (e.g. SIMBA).
 - Determine the minimum set of fields than contain 90% and 95% of the cosmological and astrophysical information.
-- Understand what operation(s) is the network performing for each different field and in multifield in order to determine the value of the cosmological parameters.
+- Understand what operation(s) the network is performing for each different field and multifield in order to determine the value of the cosmological parameters.
 
-Solving the above challenges will help cosmologists to extract the maximum robust information from cosmological surveys, unveiling the laws and constituents of our own Universe.
+Solving the above challenges will help cosmologists to extract the maximum amount of robust information from cosmological surveys, unveiling the laws and constituents of our own Universe.
