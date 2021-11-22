@@ -3,8 +3,8 @@ Download
 
 CMD data can be downloaded in two different ways:
 
-#. Via `globus <https://app.globus.org/file-manager?origin_id=837d49c0-f099-11eb-ab64-d195c983855c&origin_path=%2F>`_.
-#. Via  `url  <https://users.flatironinstitute.org/~fvillaescusa/priv/h2ycLVIanaOqF4LTHw7n3E0IkAAH9/CMD>`_.
+#. Via `globus <https://app.globus.org/file-manager?origin_id=1910cb10-4ba8-11ec-a516-b537d6c07c1d&origin_path=%2F>`_.
+#. Via  `url  <https://users.flatironinstitute.org/~fvillaescusa/priv/DEPnzxoWlaTQ6CjrXqsm0vYi8L7Jy/CMD>`_.
 
 .. Note::
   
