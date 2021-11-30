@@ -10,7 +10,7 @@ CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic
 
 - **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,000 of these simulations. 
   
-- **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations. 
+- **N-body**. These gravity-only N-body simulations only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations. 
 
 Structure
 ---------
@@ -69,17 +69,17 @@ The table below lists the 13 types of fields represented by the data and provide
 | Total                    |        | 195,000 | 195,000  | 180,000 | 180,000  | 30,000  | 30,000   |                                      |
 +--------------------------+--------+---------+----------+---------+----------+---------+----------+--------------------------------------+
 
-where :math:`M_\odot` represents the mass of the Sun, km/s stands for kilometers per second, :math:`h` is the reduced Hubble constant, that in all CMD is fixed to 0.67, and :math:`{\rm kpc}` stands for kiloparsec (3,260 light years). The coefficient :math:`A` is 2 for 2D maps and 3 for 3D grids.
+where :math:`M_\odot` represents the mass of the Sun, km/s stands for kilometers per second, :math:`h` is the reduced Hubble constant, which is fixed to 0.67 in all CMD, and :math:`{\rm kpc}` stands for kiloparsec (3,260 light years). The coefficient :math:`A` is 2 for 2D maps and 3 for 3D grids.
 
 .. Note::
   
    All 2D maps have :math:`256^2` pixels and cover a periodic area of :math:`(25~h^{-1}{\rm Mpc})^2` at redshift 0. The 3D grids contain :math:`128^3`, :math:`256^3` or :math:`512^3` voxels over a volume of :math:`(25~h^{-1}{\rm Mpc})^3` and are at redshifts 0, 0.5, 1, 1.5, and 2. 
 
-We show an example of how the IllustrisTNG images look like for the different fields:
+We show an example of what the IllustrisTNG images look like for the different fields:
 
 .. image:: multifield.png
 
-where from top-left to bottom-right: gas density, gas velocity, gas temperature, gas pressure, dark matter density, dark matter velocity, electron number density, magnetic fields, stellar mass density, neutral hydrogen mass density, gas metallicity, and magnesium over iron ratio.
+where from top-left to bottom-right: gas mass, gas velocity, gas temperature, gas pressure, dark matter mass, dark matter velocity, electron abundance, magnetic fields, stellar mass, neutral hydrogen, gas metallicity, and magnesium over iron ratio.
 
 These images show different properties of the gas, dark matter, and stars in a given Universe. Determining the value of the cosmological parameters from these images will help us to decode the true value of our own Universe, allowing us to unveil some of the biggest mysteries in fundamental physics.
 
@@ -90,10 +90,10 @@ Each 2D map and 3D grid has a set of labels attached to it:
 
 - :math:`\Omega_{\rm m}`. This is a cosmological parameter that represents the fraction of matter in the Universe.
 - :math:`\sigma_8`. This is a cosmological parameter that controls the smoothness of the distribution of matter in the Universe.
-- :math:`A_{\rm SN1}` and :math:`A_{\rm SN2}`. These are two astrophysical parameters that controls two properties of supernova feedback.
-- :math:`A_{\rm AGN1}` and :math:`A_{\rm AGN2}`. These are two astrophysical parameters that control two properties of black-hole feedback.
+- :math:`A_{\rm SN1}` and :math:`A_{\rm SN2}`. These are the two astrophysical parameters that control the two properties of supernova feedback.
+- :math:`A_{\rm AGN1}` and :math:`A_{\rm AGN2}`. These are the two astrophysical parameters that control the two properties of the black-hole feedback.
 
-The data from the IllustrisTNG and SIMBA simulations are described by all the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
+The data from the IllustrisTNG and SIMBA simulations are described by all of the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
   
 
 2D maps
@@ -103,9 +103,9 @@ The generic name of the files containing the maps is ``Maps_prefix_sim_LH_z=0.00
 
 .. Note::
 
-   In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
+   In the case of the Nbody data, we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
-For instance, the file containing the gas density maps of the IllustrisTNG simulations is ``Maps_Mgas_IllustrisTNG_LH_z=0.00.npy``. The 2D maps are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA gas temperature maps do:
+For instance, the file containing the gas mass maps of the IllustrisTNG simulations is ``Maps_Mgas_IllustrisTNG_LH_z=0.00.npy``. The 2D maps are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA gas temperature maps, do:
 
 .. code:: python
 
@@ -119,7 +119,7 @@ For instance, the file containing the gas density maps of the IllustrisTNG simul
 
 The file contains 15,000 maps with :math:`256^2` pixels each.
 
-We note that the name of the files for the Nbody 2D maps is slighty different to reflect the (magneto-)hydrodynamic simulation they should be matched on:
+We note that the name of the files for the Nbody 2D maps is slighty different to reflect the (magneto-)hydrodynamic simulation they should be matched on.
 
 The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as follows:
 
@@ -133,13 +133,13 @@ The values of the cosmological and astrophysical parameters characterizing the m
    # read the data
    params = np.loadtxt(fparams)
 
-The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
+The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}` and :math:`A_{\rm AGN2}`.
 
 .. note::
 
    In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded (because the Nbody simulations do not model supernovae and black holes). They are only kept to standardize the training of the networks.
 
-The values of the cosmological and astrophysical parameters of a given map can be found as
+The values of the cosmological and astrophysical parameters of a given map can be found as:
 
 .. code:: python
 
@@ -151,7 +151,7 @@ See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7
 
 .. note::
 
-   2D maps can be generated from 3D grids by taking slides and projecting along a given axis. See this `colab <https://colab.research.google.com/drive/14RuMYCUPeR1jHGQNOXdBxQc5LKEGCmeb?usp=sharing>`__ for an example.
+   2D maps can be generated from 3D grids by taking slices and projecting along a given axis. See this `colab <https://colab.research.google.com/drive/14RuMYCUPeR1jHGQNOXdBxQc5LKEGCmeb?usp=sharing>`__ for an example.
 
 
 3D grids
@@ -163,7 +163,7 @@ The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_g
 
    In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
-For instance, the file containing the 3D gas metallicity of the IllustrisTNG simulations on a grid with ``256^3`` voxels at redshift 0 is ``Grids_Z_IllustrisTNG_LH_256_z=0.00.npy``. The 3D grids are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA neutral hydrogen mass density at redshift 1.0 with a grid of ``128^3`` voxels do:
+For instance, the file containing the 3D gas metallicity of the IllustrisTNG simulations on a grid with ``256^3`` voxels at redshift 0 is ``Grids_Z_IllustrisTNG_LH_256_z=0.00.npy``. The 3D grids are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA neutral hydrogen mass at redshift 1.0 with a grid of ``128^3`` voxels, do:
 
 .. code:: python
 
@@ -175,7 +175,7 @@ For instance, the file containing the 3D gas metallicity of the IllustrisTNG sim
    # read the data
    grids = np.load(fgrids)
 
-The file contains 1,000 grids with :math:`128^3` voxels each. For large files (e.g. those containing the grids with :math:`512^3` voxels) it is better to read the files in a slightly different way, to avoid running out of RAM memory:
+The file contains 1,000 grids with :math:`128^3` voxels each. For large files (e.g. those containing the grids with :math:`512^3` voxels), it is better to read the files in a slightly different way to avoid running out of RAM memory:
 
 .. code:: python
 
@@ -207,13 +207,13 @@ The values of the cosmological and astrophysical parameters characterizing the m
    # read the data
    params = np.loadtxt(fparams)
 
-The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}`, :math:`A_{\rm AGN2}`.
+The file contains 1,000 entries with 6 values per entry. The first and second entries are the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`, while the rest represent the values of the astrophysical parameters: :math:`A_{\rm SN1}`, :math:`A_{\rm AGN1}`, :math:`A_{\rm SN2}` and :math:`A_{\rm AGN2}`.
 
 .. note::
 
    In the case of the ``Nbody`` maps, only the first and second columns (the ones containing the values of :math:`\Omega_{\rm m}` and :math:`\sigma_8`) are relevant. The other 4 columns can be disregarded (because the Nbody simulations do not model supernovae and black holes). They are only kept to standardize the training of the networks.
 
-The value of the cosmological and astrophysical parameters of a given grid can be found as
+The value of the cosmological and astrophysical parameters of a given grid can be found as:
 
 .. code:: python
 
@@ -224,7 +224,7 @@ The value of the cosmological and astrophysical parameters of a given grid can b
 Symmetries
 ----------
 
-Each 2D map and 3D grid from CMD has a set of labels associated to it: two cosmological parameters and four astrophysical parameters (only in the case of data from IllustrisTNG and SIMBA simulations). These labels will remain the same if
+Each 2D map and 3D grid from CMD has a set of labels associated with it: two cosmological parameters and four astrophysical parameters (only in the case of data from IllustrisTNG and SIMBA simulations). These labels will remain the same if
 
 - rotations
 - translations
@@ -265,7 +265,7 @@ Matching data
 
 There are several ways to match CMD.
 
-1. The 2D maps and 3D grids can be matched across fields within the same simulation type. For instance, the maps number 2786 of the files ``Maps_ne_IllustrisTNG_LH_z=0.0.npy`` and ``Maps_B_IllustrisTNG_LH_z=0.0.npy`` represent the same region of the same simulation. The only difference is that the first map will show the electron abundance while the second shows the magnetic fields. The same thing applies to the 3D grids. For instance, the grids number 621 of the files ``Grids_HI_SIMBA_LH_128_z=0.0.npy`` and ``Grids_Mgas_SIMBA_LH_128_z=0.0.npy`` represent the same volume of the same simulation with the only difference that the first grid shows the neutral hydrogen mass density while the second contains the gas density.
+1. The 2D maps and 3D grids can be matched across fields within the same simulation type. For instance, the maps number 2786 of the files ``Maps_ne_IllustrisTNG_LH_z=0.0.npy`` and ``Maps_B_IllustrisTNG_LH_z=0.0.npy`` represent the same region of the same simulation. The only difference is that the first map shows the electron abundance while the second shows the magnetic fields. The same thing applies to the 3D grids. For instance, the grids number 621 of the files ``Grids_HI_SIMBA_LH_128_z=0.0.npy`` and ``Grids_Mgas_SIMBA_LH_128_z=0.0.npy`` represent the same volume of the same simulation with the only difference that the first grid shows the neutral hydrogen mass while the second contains the gas mass.
 
 .. warning::
 
@@ -285,7 +285,7 @@ There are several ways to match CMD.
 
    We do not recommend using the above time matching for the 2D maps. The reason is that in a simulation, particles will move with time, so particles that are in a given map at a given time may move to another map at a different time. While this is not a problem for the 3D grids, it may be a challenge for the 2D maps.
 
-We note that the above three matchings can be combined. For instance, in the :ref:`mapping` application we want to find the mapping between the total matter from an N-body simulation and a given field from a (magneto-)hydrodynamic simulation. In this case, the grids number 714 of the files ``Grids_T_SIMBA_LH_256_z=0.0.npy`` and ``Grids_Mtot_Nbody_SIMBA_LH_256_z=0.0.npy`` represent the same region at redshift 0, the first grid will contain the gas temperature from the hydrodynamic simulation while the second is the total matter field from the equivalent N-body simulation.
+We note that the above three matchings can be combined. For instance, in the :ref:`mapping` application, we want to find the mapping between the total matter from an N-body simulation and a given field from a (magneto-)hydrodynamic simulation. In this case, the grids number 714 of the files ``Grids_T_SIMBA_LH_256_z=0.0.npy`` and ``Grids_Mtot_Nbody_SIMBA_LH_256_z=0.0.npy`` represent the same region at redshift 0; the first grid will contain the gas temperature from the hydrodynamic simulation while the second is the total matter field from the equivalent N-body simulation.
   
    
 Storage
@@ -295,6 +295,6 @@ Each pixel of a 2D map and each voxel of a 3D grid is stored as a float, i.e. it
 
 A single 2D map that has :math:`256^2` pixels will take :math:`256^2\times4=0.25` Mb. CMD is organized into files that contain 15,000 maps per field. Those files require 3.75 Gb. Since there are 27 of those files in CMD (13 for IllustrisTNG, 12 for SIMBA, and 1+1 for N-body), downloading all 2D maps from CMD requires ~100 Gb.
 
-A single 3G grid with :math:`N^3` voxels will take :math:`N^3\times4` bytes, i.e. 8 Mb for :math:`N=128`, 64 Mb for :math:`N=256`, or 512 Mb for :math:`N=512`. CMD is organized into files that contain 1,000 3D grids for each field. Each of those files will occupy 7.8 Gb (:math:`N=128`), 62.5 Gb (:math:`N=256`), and 500 Gb (:math:`N=512`). All CMD files containing 3D grids at a given resolution and redshift will take 211 Gb, 1.65 Tb, and 13.2 Tb for :math:`N=128, 256, 512`, respectively. All files at all redshifts and resolutions will take 75.2 Tb.
+A single 3D grid with :math:`N^3` voxels will take :math:`N^3\times4` bytes, i.e. 8 Mb for :math:`N=128`, 64 Mb for :math:`N=256`, or 512 Mb for :math:`N=512`. CMD is organized into files that contain 1,000 3D grids for each field. Each of those files will occupy 7.8 Gb (:math:`N=128`), 62.5 Gb (:math:`N=256`), and 500 Gb (:math:`N=512`). All CMD files containing 3D grids at a given resolution and redshift will take 211 Gb, 1.65 Tb, and 13.2 Tb for :math:`N=128, 256, 512`, respectively. All files at all redshifts and resolutions will take 75.2 Tb.
 
 
