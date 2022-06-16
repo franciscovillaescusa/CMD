@@ -1,5 +1,10 @@
+Access
+======
+
+To work with CMD the user can either download the data or work with it online.
+
 Download
-========
+--------
 
 CMD data can be downloaded in two different ways:
 
@@ -10,6 +15,12 @@ CMD data can be downloaded in two different ways:
   
    Transfering the data with the url is simple and convenient, but it can also be slow and unstable, in particular for the large files. We thus recommend using globus as it is the fastest and more reliable way to transfer the data.
 
+Binder
+------
+
+We provide access to the data through `binder <https://binder.flatironinstitute.org/~fvillaescusa/CMD>`_. Binder is an online system where the data can be accessed and manipulated without the need to transfer it. The user can either use a terminal-like or a python notebook-like to view and manipulate the data. Note that this system is not meant to perform heavy calculations, but to explore the data. The user can find some documentation on binder `here <https://docs.simonsfoundation.org/index.php/Public:Binder>`_.
+
+   
 Structure
 ---------
 
