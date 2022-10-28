@@ -45,7 +45,7 @@ The table below lists the 13 types of fields represented by the data and provide
 +--------------------------+--------+---------+----------+---------+----------+---------+----------+-------------------------------------------+
 | Gas temperature          | T      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       | Kelvin                                    |
 +--------------------------+--------+---------+----------+---------+----------+---------+----------+-------------------------------------------+
-| Gas pressure             | P      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       | :math:`M_\odot{\rm (km/s)^2/Mpc^3}`       |
+| Gas pressure             | P      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       | :math:`h^2M_\odot{\rm (km/s)^2/Mpc^3}`    |
 +--------------------------+--------+---------+----------+---------+----------+---------+----------+-------------------------------------------+
 | Gas metallicity          | Z      | 15,000  | 15,000   | 15,000  | 15,000   | --      | --       | dimensionless                             |
 +--------------------------+--------+---------+----------+---------+----------+---------+----------+-------------------------------------------+
@@ -73,7 +73,7 @@ where :math:`M_\odot` represents the mass of the Sun, km/s stands for kilometers
 
 .. Warning::
 
-   We note that the units reported in the `CMD paper <https://arxiv.org/abs/2109.10915>`_ (see Table 1) are not correct. The :math:`{\rm kpc}` should be :math:`{\rm Mpc}` and the units for the electron density are missing several factors. The above table shows the correct units of the 2D maps and 3D grids.
+   We note that the units reported in the `CMD paper <https://arxiv.org/abs/2109.10915>`_ (see Table 1) are not correct. The :math:`{\rm kpc}` should be :math:`{\rm Mpc}`. The units for the electron density are missing several factors and the pressure units lacks a :math:`h^2` factor. The above table shows the correct units of the 2D maps and 3D grids.
 
 .. Note::
   
