@@ -1,6 +1,10 @@
 Publications
 ============
 
+#. | **Emulating cosmological multifields with generative adversarial networks**
+   | Sambatra Andrianomena, Francisco Villaescusa-Navarro, Sultan Hassan
+   | `2211.05000 <https://arxiv.org/abs/2211.05000>`_ 
+
 #. | **Predictive uncertainty on improved astrophysics recovery from multifield cosmology**
    | Sambatra Andrianomena, Sultan Hassan
    | `2208.08927 <https://arxiv.org/abs/2208.08927>`_
