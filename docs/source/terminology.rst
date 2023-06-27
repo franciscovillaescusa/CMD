@@ -33,6 +33,8 @@ Here we describe briefly some concepts that non-cosmologists may not be familiar
 
 **SIMBA**. This denotes data from cosmological hydrodynamic simulations run with the GIZMO code (a code used to solve the gravity plus hydrodynamics equations), employing the same subgrid physics as the SIMBA subgrid model, up to variations of the astrophysical parameters.
 
+**Astrid**. This denotes data from cosmological hydrodynamic simulations run with the MG-Gadget code (a code used to solve the gravity plus hydrodynamics equations), employing the same subgrid physics as the Astrid subgrid model, up to variations of the astrophysical parameters.
+
 **Metallicity**. In astronomy, all elements other than hydrogen and helium are called metals. The metallicity of a gas cloud, a galaxy or a star is the fraction of mass in metals in that system.
 
 **Magnesium over iron**. Cosmic gas, stars and galaxies contain a fraction of their total mass in different elements, such as carbon, oxigen, magnesium, iron...etc. The ratio between the magnesium and iron, Mg/Fe, is an interesting quantity from the point of view of astrophysics. In CMD, we use it to see if we can extract cosmological information from it.

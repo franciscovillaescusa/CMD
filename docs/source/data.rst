@@ -4,11 +4,13 @@ Description
 Simulations
 -----------
 
-CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into three groups, that indicate the type of simulation used to create the data:
+CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into different groups, that indicate the type of simulation used to create the data:
 
-- **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 1,000 of these simulations. 
+- **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 1,088 of these simulations. 
 
-- **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,000 of these simulations. 
+- **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,088 of these simulations.
+
+- **Astrid**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,088 of these simulations.
   
 - **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations. 
 
@@ -19,12 +21,17 @@ CMD provides the following data generated from the above simulations:
 
 **IllustrisTNG**
 
-- 15,000 2D maps per field for 13 different fields. 195,000 2D maps in total.
+- 16,320 2D maps per field for 13 different fields. 212,160 2D maps in total.
 - 15,000 3D grids per field for 13 different fields. 195,000 3D grids in total.
   
 **SIMBA**
 
-- 15,000 2D maps per field for 12 different fields. 180,000 2D maps in total.
+- 16,320 2D maps per field for 12 different fields. 195,840 2D maps in total.
+- 15,000 3D grids per field for 12 different fields. 180,000 3D grids in total.
+
+**Astrid**
+
+- 16,320 2D maps per field for 12 different fields. 195,840 2D maps in total.
 - 15,000 3D grids per field for 12 different fields. 180,000 3D grids in total.
 
 **Nbody**
@@ -104,7 +111,7 @@ The data from the IllustrisTNG and SIMBA simulations are described by all the ab
 2D maps
 -------
 
-The generic name of the files containing the maps is ``Maps_prefix_sim_LH_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``.
+The generic name of the files containing the maps is ``Maps_prefix_sim_LH_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``.
 
 .. Note::
 
@@ -162,7 +169,7 @@ See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7
 3D grids
 --------
 
-The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
+The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
 
 .. Note::
 
