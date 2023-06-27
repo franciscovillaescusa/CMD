@@ -21,10 +21,13 @@ Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Un
    
 .. toctree::
    :maxdepth: 2
-   :caption: Data
+   :caption: CMD
 
+   science
    data
    access
+   publications
+   citation
 
 .. toctree::
    :maxdepth: 3
@@ -41,9 +44,6 @@ Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Un
    :maxdepth: 2
    :caption: Other
 
-   science
    terminology
-   publications
-   citation
    license
    help
