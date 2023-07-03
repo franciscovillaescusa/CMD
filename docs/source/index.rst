@@ -11,7 +11,7 @@ CAMELS Multifield Dataset (CMD)
    :alt: CMD logo
    :class: with-shadow float-left
 	 
-CMD is a publicly available collection of hundreds of thousands 2D maps and 3D grids containing different properties of the gas, dark matter, and stars from more than 2,000 different universes. The data has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the CAMELS project.
+CMD is a publicly available collection of hundreds of thousands 2D maps and 3D grids containing different properties of the gas, dark matter, and stars from more than 3,000 different universes. The data has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://camels.readthedocs.io>`_.
 
 .. figure:: movie.gif
 
@@ -23,6 +23,7 @@ Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Un
    :maxdepth: 2
    :caption: CMD
 
+   news
    science
    data
    access

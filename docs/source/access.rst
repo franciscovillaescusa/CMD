@@ -1,5 +1,5 @@
-Access
-======
+Data access and structure
+=========================
 
 To work with CMD the user can either download the data or work with it online.
 

@@ -1,10 +1,14 @@
+.. _data: 
+
 Description
 ===========
 
-Simulations
------------
+CMD contains hundreds of thousands of 2D maps and 3D grids created from cosmological simulations run with different codes. The CMD data is arranged into different files whose name indicate the properties of the simulations used to generate it. This is because the CMD data, as CAMELS, can be classified into into suites and sets (see `this page <https://camels.readthedocs.io/en/latest/suites_sets.html>`_ for what concerns the CAMELS simulations):
 
-CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into different groups, that indicate the type of simulation used to create the data:
+Suites
+------
+
+CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into different `suites`, that indicate the type of simulation used to create the data:
 
 - **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 1,088 of these simulations. 
 
@@ -12,7 +16,23 @@ CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic
 
 - **Astrid**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,088 of these simulations.
   
-- **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations. 
+- **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations.
+  
+  
+Sets
+----
+
+Each suite contains different `sets`, that indicate how the value of the labels of the underlying simulations are organized:
+
+- **CV**. The value of the labels is always the same and correspond to the fiducial model. The 2D maps and 3D grids only differ on the initial conditions of the simulations run. This set contains 27 simulations.
+- **1P**. The value of the labels is varied one-at-a-time. I.e. the 2D maps and 3D grids have labels whose value only differ in one element from the value of the fiducial maps (CV set). In this case, the initial conditions are always the same. This set contains 61 simulations.
+- **LH**. The value of all labels is different in each simulation and the values are organized in a latin-hypercube. The value of the initial conditions is different in each simulation. This set contains 1,000 simulations.
+
+.. attention::
+
+   When working with CMD data, you will use files whose name will indicate the suite and the set. For instance, the file ``Maps_Mcdm_Astrid_1P_z=0.00.npy`` contains 2D maps of the cold dark matter field created from Astrid 1P simulations. In other workds, the simulations have been run with the Astrid model and their parameters follow the 1P configuration: all simulations have the same initial conditions but their parameters only vary from those of the fiducial ones in a single parameter.
+
+  
 
 Structure
 ---------
@@ -105,13 +125,13 @@ Each 2D map and 3D grid has a set of labels attached to it:
 - :math:`A_{\rm SN1}` and :math:`A_{\rm SN2}`. These are two astrophysical parameters that controls two properties of supernova feedback.
 - :math:`A_{\rm AGN1}` and :math:`A_{\rm AGN2}`. These are two astrophysical parameters that control two properties of black-hole feedback.
 
-The data from the IllustrisTNG and SIMBA simulations are described by all the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
+The data from the IllustrisTNG, SIMBA, and Astrid simulations are described by all the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
   
 
 2D maps
 -------
 
-The generic name of the files containing the maps is ``Maps_prefix_sim_LH_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``.
+The generic name of the files containing the maps is ``Maps_prefix_suite_set_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` is the suite (``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``) and ``set`` is the set (``1P``, ``CV``, ``LH``).
 
 .. Note::
 
@@ -133,7 +153,7 @@ The file contains 15,000 maps with :math:`256^2` pixels each.
 
 We note that the name of the files for the Nbody 2D maps is slighty different to reflect the (magneto-)hydrodynamic simulation they should be matched on:
 
-The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as follows:
+The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, or ``Nbody``. These files can be read as follows:
 
 .. code:: python
 
@@ -169,7 +189,7 @@ See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7
 3D grids
 --------
 
-The generic name of the files containing the 3D grids is ``Grids_prefix_sim_LH_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``sim`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
+The generic name of the files containing the 3D grids is ``Grids_prefix_suite_set_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``, ``set`` can be ``1P``, ``CV``, ``LH``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
 
 .. Note::
 
@@ -207,14 +227,14 @@ The file contains 1,000 grids with :math:`128^3` voxels each. For large files (e
 
    
 
-The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``sim`` can be IllustrisTNG, SIMBA or Nbody. These files can be read as follows:
+The values of the cosmological and astrophysical parameters characterizing the maps of a given field can be found in ``params_set_suite.txt`` where ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, or ``Nbody``, and ``set`` can be ``1P``, ``CV``, or ``LH``. These files can be read as follows:
 
 .. code:: python
 
    import numpy as np
 
    # name of the file
-   fparams = 'params_SIMBA.txt'
+   fparams = 'params_LH_SIMBA.txt'
 
    # read the data
    params = np.loadtxt(fparams)
@@ -236,15 +256,13 @@ The value of the cosmological and astrophysical parameters of a given grid can b
 Symmetries
 ----------
 
-Each 2D map and 3D grid from CMD has a set of labels associated to it: two cosmological parameters and four astrophysical parameters (only in the case of data from IllustrisTNG and SIMBA simulations). These labels will remain the same if
+Each 2D map and 3D grid from CMD has a set of labels associated to it: two cosmological parameters and four astrophysical parameters (only in the case of data from IllustrisTNG, SIMBA, and Astrid simulations). These labels will remain the same if
 
 - rotations
 - translations
 - parity
 
-transformations are applied to the data.
-
-Another important thing to take into account is that the data is periodic in all dimensions. For instance, in the case of 2D maps
+transformations are applied to the data. Another important thing to take into account is that the data is periodic in all dimensions. For instance, in the case of 2D maps
 
 .. code:: python
 
@@ -305,8 +323,8 @@ Storage
 
 Each pixel of a 2D map and each voxel of a 3D grid is stored as a float, i.e. it occupies 4 bytes.
 
-A single 2D map that has :math:`256^2` pixels will take :math:`256^2\times4=0.25` Mb. CMD is organized into files that contain 15,000 maps per field. Those files require 3.75 Gb. Since there are 27 of those files in CMD (13 for IllustrisTNG, 12 for SIMBA, and 1+1 for N-body), downloading all 2D maps from CMD requires ~100 Gb.
+A single 2D map that has :math:`256^2` pixels will take :math:`256^2\times4=0.25` Mb. CMD is organized into files that contain different number of maps. For instance, the files of the LH set contain 15,000 maps per field. Each of those files would thus require 3.75 Gb. If you want to download all the maps of the IllustrisTNG LH set (13 different fields) you would need ~50 Gb.
 
-A single 3G grid with :math:`N^3` voxels will take :math:`N^3\times4` bytes, i.e. 8 Mb for :math:`N=128`, 64 Mb for :math:`N=256`, or 512 Mb for :math:`N=512`. CMD is organized into files that contain 1,000 3D grids for each field. Each of those files will occupy 7.8 Gb (:math:`N=128`), 62.5 Gb (:math:`N=256`), and 500 Gb (:math:`N=512`). All CMD files containing 3D grids at a given resolution and redshift will take 211 Gb, 1.65 Tb, and 13.2 Tb for :math:`N=128, 256, 512`, respectively. All files at all redshifts and resolutions will take 75.2 Tb.
+A single 3D grid with :math:`N^3` voxels will take :math:`N^3\times4` bytes, i.e. 8 Mb for :math:`N=128`, 64 Mb for :math:`N=256`, or 512 Mb for :math:`N=512`. CMD is organized into files that contain different numbers of 3D grids. For instance, the files of the LH sets contain 1,000 grids. Each of those LH files will occupy 7.8 Gb (:math:`N=128`), 62.5 Gb (:math:`N=256`), and 500 Gb (:math:`N=512`). If you want to download all 12 grids of the LH set for SIMBA at :math:`N=512` it will require ~6 Tb.
 
 
