@@ -27,6 +27,8 @@ Each suite contains different `sets`, that indicate how the value of the labels 
 - **CV**. The value of the labels is always the same and correspond to the fiducial model. The 2D maps and 3D grids only differ on the initial conditions of the simulations run. This set contains 27 simulations.
 - **1P**. The value of the labels is varied one-at-a-time. I.e. the 2D maps and 3D grids have labels whose value only differ in one element from the value of the fiducial maps (CV set). In this case, the initial conditions are always the same. This set contains 61 simulations.
 - **LH**. The value of all labels is different in each simulation and the values are organized in a latin-hypercube. The value of the initial conditions is different in each simulation. This set contains 1,000 simulations.
+- **EX**. The value of the labels is chosen to be `extreme` and the initial conditions of the simulations are the same. This set contains 4 simulations.
+- **BE**. The underlying simulations have the same initial conditions and the same value of the labels (the fiducial ones). The only difference between the simulations is due to random noise from numerical approximations. This set contains 27 simulations. So far, this set is only present for the IllutrisTNG suite.
 
 .. attention::
 
@@ -65,36 +67,36 @@ The table summarizes the properties of the 2D maps:
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 | Field                    | Prefix | IllustrisTNG | SIMBA        | Astrid       | Nbody        | Units                                     |
 +==========================+========+==============+==============+==============+==============+===========================================+
-|                          |        | 2D maps      | 2D maps      | 2D maps      | 2D maps      |                                           |
+|                          |        | Number of 2D maps                                         |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas density              | Mgas   | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
+| Gas density              | Mgas   | 16,785       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas velocity             | Vgas   | 16,725       | 16,320       | 16,320       | --           | km/s                                      |
+| Gas velocity             | Vgas   | 16,785       | 16,380       | 16,380       | --           | km/s                                      |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas temperature          | T      | 16,725       | 16,320       | 16,320       | --           | Kelvin                                    |
+| Gas temperature          | T      | 16,785       | 16,380       | 16,380       | --           | Kelvin                                    |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas pressure             | P      | 16,725       | 16,320       | 16,320       | --           | :math:`h^2M_\odot{\rm (km/s)^2/kpc^3}`    |
+| Gas pressure             | P      | 16,785       | 16,380       | 16,380       | --           | :math:`h^2M_\odot{\rm (km/s)^2/kpc^3}`    |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas metallicity          | Z      | 16,725       | 16,320       | 16,320       | --           | dimensionless                             |
+| Gas metallicity          | Z      | 16,785       | 16,380       | 16,380       | --           | dimensionless                             |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Neutral hydrogen density | HI     | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
+| Neutral hydrogen density | HI     | 16,785       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Electron number density  | ne     | 16,725       | 16,320       | 16,320       | --           | :math:`h^2/{\rm cm}^3({\rm Mpc}/h)`       | 
+| Electron number density  | ne     | 16,785       | 16,380       | 16,380       | --           | :math:`h^2/{\rm cm}^3({\rm Mpc}/h)`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Magnetic fields          | B      | 16,725       | --           | --           | --           | Gauss                                     |
+| Magnetic fields          | B      | 16,785       | --           | --           | --           | Gauss                                     |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Magnesium over Iron      | MgFe   | 16,725       | 16,320       | 16,320       | --           | dimensionless                             |
+| Magnesium over Iron      | MgFe   | 16,785       | 16,380       | 16,380       | --           | dimensionless                             |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Dark matter density      | Mcdm   | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
+| Dark matter density      | Mcdm   | 16,785       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Dark matter velocity     | Vcdm   | 16,725       | 16,320       | 16,320       | --           | km/s                                      |
+| Dark matter velocity     | Vcdm   | 16,785       | 16,380       | 16,380       | --           | km/s                                      |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Stellar mass density     | Mstar  | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
+| Stellar mass density     | Mstar  | 16,785       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total matter density     | Mtot   | 16,725       | 16,320       | 16,320       | 30,000       | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       |  
+| Total matter density     | Mtot   | 16,785       | 16,380       | 16,380       | 30,000       | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       |  
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total                    |        | 217,425      | 195,840      | 195,840      | 30,000       |                                           |
+| Total                    |        | 218,205      | 196,560      | 196,560      | 30,000       |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 
 The table summarizes the properties of the 3D grids:
@@ -102,7 +104,7 @@ The table summarizes the properties of the 3D grids:
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 | Field                    | Prefix | IllustrisTNG | SIMBA        | Astrid       | Nbody        | Units                                     |
 +==========================+========+==============+==============+==============+==============+===========================================+
-|                          |        | 3D grids     | 3D grids     | 3D grids     | 3D grids     |                                           |
+|                          |        | Number of 3D grids                                        |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 | Gas density              | Mgas   | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
