@@ -43,23 +43,23 @@ CMD provides the following data generated from the above simulations:
 
 **IllustrisTNG**
 
-- 16,320 2D maps per field for 13 different fields. 212,160 2D maps in total.
-- 15,000 3D grids per field for 13 different fields. 195,000 3D grids in total.
+- 16,785 2D maps per field for 13 different fields. 218,205 2D maps in total.
+- 16,380 3D grids per field for 13 different fields. 212,940 3D grids in total.
   
 **SIMBA**
 
-- 16,320 2D maps per field for 12 different fields. 195,840 2D maps in total.
-- 15,000 3D grids per field for 12 different fields. 180,000 3D grids in total.
+- 16,380 2D maps per field for 12 different fields. 196,560 2D maps in total.
+- 16,380 3D grids per field for 12 different fields. 196,560 3D grids in total.
 
 **Astrid**
 
-- 16,320 2D maps per field for 12 different fields. 195,840 2D maps in total.
-- 15,000 3D grids per field for 12 different fields. 180,000 3D grids in total.
+- 16,380 2D maps per field for 12 different fields. 196,560 2D maps in total.
+- 16,380 3D grids per field for 12 different fields. 196,560 3D grids in total.
 
 **Nbody**
 
-- 30,000 2D maps of one single field. 30,000 2D maps in total.
-- 2,000 3D grids of one single field. 30,000 3D grids in total.
+- 49,140 2D maps of one single field. 49,140 2D maps in total.
+- 49,140 3D grids of one single field. 49,140 3D grids in total.
   
 
 The table summarizes the properties of the 2D maps:
@@ -93,10 +93,10 @@ The table summarizes the properties of the 2D maps:
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 | Stellar mass density     | Mstar  | 16,785       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total matter density     | Mtot   | 16,785       | 16,380       | 16,380       | 30,000       | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       |  
+| Total matter density     | Mtot   | 16,785       | 16,380       | 16,380       | 49,140       | :math:`(M_\odot/h)/({\rm Mpc}/h)^2`       |  
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total                    |        | 218,205      | 196,560      | 196,560      | 30,000       |                                           |
+| Total                    |        | 218,205      | 196,560      | 196,560      | 49,140       |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 
 The table summarizes the properties of the 3D grids:
@@ -106,34 +106,34 @@ The table summarizes the properties of the 3D grids:
 +==========================+========+==============+==============+==============+==============+===========================================+
 |                          |        | Number of 3D grids                                        |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas density              | Mgas   | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
+| Gas density              | Mgas   | 16,380       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas velocity             | Vgas   | 16,725       | 16,320       | 16,320       | --           | km/s                                      |
+| Gas velocity             | Vgas   | 16,380       | 16,380       | 16,380       | --           | km/s                                      |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas temperature          | T      | 16,725       | 16,320       | 16,320       | --           | Kelvin                                    |
+| Gas temperature          | T      | 16,380       | 16,380       | 16,380       | --           | Kelvin                                    |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas pressure             | P      | 16,725       | 16,320       | 16,320       | --           | :math:`h^2M_\odot{\rm (km/s)^2/kpc^3}`    |
+| Gas pressure             | P      | 16,380       | 16,380       | 16,380       | --           | :math:`h^2M_\odot{\rm (km/s)^2/kpc^3}`    |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Gas metallicity          | Z      | 16,725       | 16,320       | 16,320       | --           | dimensionless                             |
+| Gas metallicity          | Z      | 16,380       | 16,380       | 16,380       | --           | dimensionless                             |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Neutral hydrogen density | HI     | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
+| Neutral hydrogen density | HI     | 16,380       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Electron number density  | ne     | 16,725       | 16,320       | 16,320       | --           | :math:`h^2/{\rm cm}^3`                    | 
+| Electron number density  | ne     | 16,380       | 16,380       | 16,380       | --           | :math:`h^2/{\rm cm}^3`                    | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Magnetic fields          | B      | 16,725       | --           | --           | --           | Gauss                                     |
+| Magnetic fields          | B      | 16,380       | --           | --           | --           | Gauss                                     |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Magnesium over Iron      | MgFe   | 16,725       | 16,320       | 16,320       | --           | dimensionless                             |
+| Magnesium over Iron      | MgFe   | 16,380       | 16,380       | 16,380       | --           | dimensionless                             |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Dark matter density      | Mcdm   | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
+| Dark matter density      | Mcdm   | 16,380       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Dark matter velocity     | Vcdm   | 16,725       | 16,320       | 16,320       | --           | km/s                                      |
+| Dark matter velocity     | Vcdm   | 16,380       | 16,380       | 16,380       | --           | km/s                                      |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Stellar mass density     | Mstar  | 16,725       | 16,320       | 16,320       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
+| Stellar mass density     | Mstar  | 16,380       | 16,380       | 16,380       | --           | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       | 
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total matter density     | Mtot   | 16,725       | 16,320       | 16,320       | 30,000       | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       |  
+| Total matter density     | Mtot   | 16,380       | 16,380       | 16,380       | 49,140       | :math:`(M_\odot/h)/({\rm Mpc}/h)^3`       |  
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
-| Total                    |        | 217,425      | 195,840      | 195,840      | 30,000       |                                           |
+| Total                    |        | 212,940      | 196,560      | 196,560      | 49,140       |                                           |
 +--------------------------+--------+--------------+--------------+--------------+--------------+-------------------------------------------+
 
 where :math:`M_\odot` represents the mass of the Sun, km/s stands for kilometers per second, :math:`h` is the reduced Hubble constant, that in all CMD is fixed to 0.67, and :math:`{\rm kpc}` stands for kiloparsec (3,260 light years). The coefficient :math:`A` is 2 for 2D maps and 3 for 3D grids.
@@ -171,11 +171,11 @@ The data from the IllustrisTNG, SIMBA, and Astrid simulations are described by a
 2D maps
 -------
 
-The generic name of the files containing the maps is ``Maps_prefix_suite_set_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` is the suite (``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``) and ``set`` is the set (``1P``, ``CV``, ``LH``).
+The generic name of the files containing the maps is ``Maps_prefix_suite_set_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` is the suite (``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA``, or ``Nbody_Astrid``) and ``set`` is the set (``1P``, ``CV``, ``LH``).
 
 .. Note::
 
-   In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
+   In the case of the Nbody data we add an extra word, ``IllustrisTNG``, ``SIMBA``, or ``Astrid``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
 For instance, the file containing the gas density maps of the IllustrisTNG simulations is ``Maps_Mgas_IllustrisTNG_LH_z=0.00.npy``. The 2D maps are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA gas temperature maps do:
 
@@ -229,11 +229,11 @@ See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7
 3D grids
 --------
 
-The generic name of the files containing the 3D grids is ``Grids_prefix_suite_set_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, or ``Nbody_SIMBA``, ``set`` can be ``1P``, ``CV``, ``LH``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
+The generic name of the files containing the 3D grids is ``Grids_prefix_suite_set_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA`` or ``Nbody_Astrid``, ``set`` can be ``1P``, ``CV``, ``LH``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
 
 .. Note::
 
-   In the case of the Nbody data we add an extra word, ``IllustrisTNG`` or ``SIMBA``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
+   In the case of the Nbody data we add an extra word, ``IllustrisTNG``, ``SIMBA`` or ``Astrid``, to characterize the matching data from the (magneto-)hydrodynamics simulations. See :ref:`matching-data` for further details. 
 
 For instance, the file containing the 3D gas metallicity of the IllustrisTNG simulations on a grid with ``256^3`` voxels at redshift 0 is ``Grids_Z_IllustrisTNG_LH_256_z=0.00.npy``. The 3D grids are stored as ``.npy`` files, and can be read with the numpy ``load`` routine. For instance, to read the SIMBA neutral hydrogen mass density at redshift 1.0 with a grid of ``128^3`` voxels do:
 
