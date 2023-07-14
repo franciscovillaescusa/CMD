@@ -27,6 +27,7 @@ Each 2D map and 3D grid has a set of labels, or parameters, associated to it. Un
    science
    data
    access
+   game
    publications
    citation
 
