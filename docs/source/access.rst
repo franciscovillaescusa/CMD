@@ -37,7 +37,7 @@ CMD data is organized as follows:
 
   - **data**. All files with the 3D grids and the values of the cosmological and astrophysical parameters are here.
 
-The total data volume of the 2D maps is approximate 100GB, and of the 3D grids is of 75TB.
+The total data volume of the 2D maps is approximate 325GB, and of the 3D grids is of 120TB.
 
 The image below shows a scheme with the way the data is organized:
     

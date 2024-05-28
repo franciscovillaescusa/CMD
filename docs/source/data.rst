@@ -10,13 +10,13 @@ Suites
 
 CMD has been generated from thousands of state-of-the-art (magneto-)hydrodynamic and gravity-only N-body simulations from the `CAMELS project <https://www.camel-simulations.org>`__. CMD data can be classified into different `suites`, that indicate the type of simulation used to create the data:
 
-- **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 1,088 of these simulations. 
+- **IllustrisTNG**. These magneto-hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. They also simulate magnetic fields. CMD uses 3,219 of these simulations. 
 
-- **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,088 of these simulations.
+- **SIMBA**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,171 of these simulations.
 
-- **Astrid**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 1,088 of these simulations.
+- **Astrid**. These hydrodynamic simulations follow the evolution of gas, dark matter, stars, and black-holes. CMD uses 2,080 of these simulations.
   
-- **N-body**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 2,000 of these simulations.
+- **Nbody**. These gravity-only N-body simulation only follow the evolution of dark matter. Thus, they do not model astrophysical processes such as the formation of stars and the feedback from black-holes. There is an N-body simulation for each (magneto-)hydrodynamic simulation. CMD uses 6,136 of these simulations.
   
   
 Sets
@@ -25,19 +25,25 @@ Sets
 Each suite contains different `sets`, that indicate how the value of the labels of the underlying simulations are organized:
 
 - **CV**. The value of the labels is always the same and correspond to the fiducial model. The 2D maps and 3D grids only differ on the initial conditions of the simulations run. This set contains 27 simulations.
-- **1P**. The value of the labels is varied one-at-a-time. I.e. the 2D maps and 3D grids have labels whose value only differ in one element from the value of the fiducial maps (CV set). In this case, the initial conditions are always the same. This set contains 61 simulations.
+- **1P**. The value of the labels is varied one-at-a-time. I.e. the 2D maps and 3D grids have labels whose value only differ in one element from the value of the fiducial maps (CV set). In this case, the initial conditions are always the same. Depending on the suite, this set contains different simulations. For instance, in IllustrisTNG, we vary 28 parameters while in Astrid only 7.
 - **LH**. The value of all labels is different in each simulation and the values are organized in a latin-hypercube. The value of the initial conditions is different in each simulation. This set contains 1,000 simulations.
 - **EX**. The value of the labels is chosen to be `extreme` and the initial conditions of the simulations are the same. This set contains 4 simulations.
 - **BE**. The underlying simulations have the same initial conditions and the same value of the labels (the fiducial ones). The only difference between the simulations is due to random noise from numerical approximations. This set contains 27 simulations. So far, this set is only present for the IllutrisTNG suite.
+- **SB**. The value of all labels is different in each simulation and the values are organized in a Sobol sequence. The value of the initial conditions is different in each simulation. This set is usually accompained by a number to indicate how many parameters are varied. For instance, SB28 in IllustrisTNG indicates that 28 parameters are varied simultaneously in the simulations.
 
 .. attention::
 
    When working with CMD data, you will use files whose name will indicate the suite and the set. For instance, the file ``Maps_Mcdm_Astrid_1P_z=0.00.npy`` contains 2D maps of the cold dark matter field created from Astrid 1P simulations. In other workds, the simulations have been run with the Astrid model and their parameters follow the 1P configuration: all simulations have the same initial conditions but their parameters only vary from those of the fiducial ones in a single parameter.
 
-  
+We refer the reader to `CAMELS organization <https://camels.readthedocs.io/en/latest/description.html>`_ for more details on this.
+   
 
 Structure
 ---------
+
+.. important::
+
+   As the number of simulations increases in CAMELS, the below numbers may become obsolete and understimate the actual number of maps and 3D grids. The reader should then consider the below number as indicative and non accurate. All data can be found in globus, binder, or the url and will be always updated. We also refer the reader to the `CAMELS documentation <https://camels.readthedocs.io/en/latest/index.html>`_ where the website will be updated on the number of available simulations for the different suites/sets/volumes.
 
 CMD provides the following data generated from the above simulations:
 
@@ -166,12 +172,17 @@ Each 2D map and 3D grid has a set of labels attached to it:
 - :math:`A_{\rm AGN1}` and :math:`A_{\rm AGN2}`. These are two astrophysical parameters that control two properties of black-hole feedback.
 
 The data from the IllustrisTNG, SIMBA, and Astrid simulations are described by all the above parameters, while the 2D maps and 3D grids generated from the N-body simulations are only characterized by the cosmological parameters :math:`\Omega_{\rm m}` and :math:`\sigma_8`.
+
+.. important::
+
+   For newer simulations, the maps and 3D grids may be characterized by more labels. For instance, in the case of the IllustrisTNG SB28 set, each map/grid is characterized by 28 parameters. Each file containing maps/grids is accompanied by its corresponding set of parameters. We also refer the reader to `CAMELS parameters <https://camels.readthedocs.io/en/latest/parameters.html>`_ for more details on the parameters (and their meaning) associated to each set.
+   
   
 
 2D maps
 -------
 
-The generic name of the files containing the maps is ``Maps_prefix_suite_set_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` is the suite (``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA``, or ``Nbody_Astrid``) and ``set`` is the set (``1P``, ``CV``, ``LH``).
+The generic name of the files containing the maps is ``Maps_prefix_suite_set_z=0.00.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` is the suite (``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA``, or ``Nbody_Astrid``) and ``set`` is the set (``1P``, ``CV``, ``LH``, ``EX``, ``BE``, ``SB``).
 
 .. Note::
 
@@ -193,14 +204,14 @@ The file contains 15,000 maps with :math:`256^2` pixels each.
 
 We note that the name of the files for the Nbody 2D maps is slighty different to reflect the (magneto-)hydrodynamic simulation they should be matched on:
 
-The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_sim.txt`` where ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, or ``Nbody``. These files can be read as follows:
+The values of the cosmological and astrophysical parameters characterizing the maps of a given field are given in ``params_set_suite.txt`` where ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, or ``Nbody`` and ``set`` can be ``1P``, ``CV``, ``LH``, ``EX``, ``BE`` or ``SB``. These files can be read as follows:
 
 .. code:: python
 
    import numpy as np
 
    # name of the file
-   fparams = 'params_SIMBA.txt'
+   fparams = 'params_LH_SIMBA.txt'
 
    # read the data
    params = np.loadtxt(fparams)
@@ -229,7 +240,7 @@ See this `colab <https://colab.research.google.com/drive/1bT1OXxEPi2IaFs7sJn96M7
 3D grids
 --------
 
-The generic name of the files containing the 3D grids is ``Grids_prefix_suite_set_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA`` or ``Nbody_Astrid``, ``set`` can be ``1P``, ``CV``, ``LH``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
+The generic name of the files containing the 3D grids is ``Grids_prefix_suite_set_grid_z=redshift.npy``, where ``prefix`` is the word identifying each field (see table above), ``suite`` can be ``IllustrisTNG``, ``SIMBA``, ``Astrid``, ``Nbody_IllustrisTNG``, ``Nbody_SIMBA`` or ``Nbody_Astrid``, ``set`` can be ``1P``, ``CV``, ``LH``, ``EX``, ``BE``, ``SB``, ``grid`` can be ``128``, ``256``, or ``512`` and ``redshift`` can be 0, 0.5, 1, 1.5 or 2.
 
 .. Note::
 
