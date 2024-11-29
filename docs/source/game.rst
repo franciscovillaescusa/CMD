@@ -12,10 +12,22 @@ We have created an app using CMD data where the user can guess
 
 You can find the game `here <https://www.zooniverse.org/projects/fvillaescusa/camels-multifield-dataset>`_ that is hosted by the `Zooniverse <https://www.zooniverse.org/>`_ platform.
 
+
 Classification
 ~~~~~~~~~~~~~~
 
-Go to the `game website <https://www.zooniverse.org/projects/fvillaescusa/camels-multifield-dataset>`_ and click on the classification buttom:
+.. raw:: html
+
+   <script
+   type="module"
+   src="https://gradio.s3-us-west-2.amazonaws.com/5.6.0/gradio.js"
+   ></script>
+
+   <gradio-app src="https://fvillaescusa-camels-fields.hf.space"></gradio-app>
+
+	 
+
+Alternatively, go to the `game website <https://www.zooniverse.org/projects/fvillaescusa/camels-multifield-dataset>`_ and click on the classification buttom:
 
 .. image:: game.png
    :width: 800px
