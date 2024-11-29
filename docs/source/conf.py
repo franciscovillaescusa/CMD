@@ -33,11 +33,14 @@ release = '1.0'
 # ones.
 extensions = [
     "sphinx_rtd_theme",
-    "sphinxcontrib.googleanalytics"
+    "sphinxcontrib.googleanalytics",
+    "sphinx_sitemap"
 ]
 
 googleanalytics_id = 'G-XRRM15GMS9'
 googleanalytics_enabled = True
+
+html_baseurl = 'https://camels-multifield-dataset.readthedocs.io/en/latest/'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -66,3 +69,5 @@ html_theme_options = {
     'logo_only': True,
     'display_version': False,
 }
+
+html_extra_path = ["robots.txt"]
